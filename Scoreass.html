@@ -11,11 +11,10 @@
 </head>
 
 <body>
-   
+
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" style="background: white;">
         <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="offcanvas offcanvas-end text-bg-tertiary" tabindex="-1" id="offcanvasNavbar">
@@ -54,7 +53,9 @@
             </div>
         </div>
     </nav>
-    <div class="container text-center"><h1 style="margin-top: 40px;font-weight: bold;">JAVASCRIPT</h1></div> 
+    <div class="container text-center">
+        <h1 style="margin-top: 40px;font-weight: bold;">JAVASCRIPT</h1>
+    </div>
     <div class="container" style="border: 1px solid rgb(248, 247, 247);margin: 70px auto;
     background-color: rgb(252, 246, 246);font-weight: bold;font-size: 20px;border-radius: 20px;">
         <code>
@@ -74,11 +75,8 @@
             location: 'uiibadan', <br>
         }; <br>
         alert(`I need two ${restaurant.Africadish.swallow[0]},two ${restaurant.Africadish.meat[0]},  <br>
-        one ${restaurant.drink[1]} from Food Mataz located at {restaurant.location[0]}  <br>
-        ${restaurant.location[1]} ${restaurant.location[2]}${restaurant.location[3]} <br>
-        ${restaurant.location[4]}${restaurant.location[5]}${restaurant.location[6]} <br>
-        ${restaurant.location[7]} everything should be ${restaurant.amount[0]} <br>
-        ${restaurant.amount[1]}${restaurant.amount[2]}${restaurant.amount[3]}${restaurant.amount[4]}`) <br><br>
+        one ${restaurant.drink[1]} from ${restaurant.name} located at 
+        ${restaurant.location} everything should be ${restaurant.amount}`) <br><br>
 <h1 style="font-weight: bold;text-align: center;">Second Assignment</h1>
         const myusers = [ <br>
             { <br>
@@ -154,10 +152,10 @@
             },
             drink: ['origin', 'coke', 'fanta'],
             amount: '#3000',
-            location: 'uiibadan',
+            location: 'ui ibadan',
         };
-        alert(`I need two ${restaurant.Africadish.swallow[0]},two ${restaurant.Africadish.meat[0]}, one ${restaurant.drink[1]} from Food Mataz located at 
-${restaurant.location[0]} ${restaurant.location[1]} ${restaurant.location[2]}${restaurant.location[3]}${restaurant.location[4]}${restaurant.location[5]}${restaurant.location[6]}${restaurant.location[7]} everything should be ${restaurant.amount[0]}${restaurant.amount[1]}${restaurant.amount[2]}${restaurant.amount[3]}${restaurant.amount[4]}`)
+        alert(`I need two ${restaurant.Africadish.swallow[0]},two ${restaurant.Africadish.meat[0]}, one ${restaurant.drink[1]} from ${restaurant.name} located at 
+${restaurant.location} everything should be ${restaurant.amount}`)
 
         const myusers = [
             {
