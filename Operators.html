@@ -8,10 +8,79 @@
 </head>
 
 <body>
+    <form>
+        <h1>Insert your age to apply</h1>
+        <input type="text" id="myage" placeholder="Your age"><br>
+        
+        <input type="text" id="mygender" placeholder="male or female"><br>
+        <button onclick="Meeyah()">Get drink</button>
+        <h3 id="result" style="color: red;"></h3>
+    </form>
+
     <script>
+        function Meeyah() 
+        {
+            let userAge = Number(document.getElementById('myage').value);
+            let userGender = document.getElementById('mygender').value;
+            let drink;
+            if (!userAge || isNaN(userAge)) {
+                drink = 'Please insert a valid number';
+                document.getElementById('result').style.color = 'black';
+               
+            }
+            else if
+               (userGender !='male' || userGender !='female'){
+                drink = 'Please put the right gender';
+                document.getElementById('result').style.color = 'red';
+            }
+            else if (userAge <= 15) {
+                drink = 'You can take water only'
+                document.getElementById('result').style.color = 'black';
+            }
+            else if (userAge <= 18 && userGender == 'male') {
+                drink = 'You can take energy drink'
+                document.getElementById('result').style.color = 'gold';
+            }
+            else if (userAge <= 18 && userGender == 'female') {
+                drink = 'You can take fanta'
+                document.getElementById('result').style.color = 'orange';
+            }
+            else if (userAge <= 25 && userGender == 'male') {
+                drink = 'You can take red wine'
+                document.getElementById('result').style.color = 'red';
+            }
+            else if (userAge <= 25 && userGender == 'female') {
+                apply = 'You can take energy drink'
+                document.getElementById('result').style.color = 'gold';
+            }
+            else if (userAge <= 60 && userGender == 'male') {
+                apply = 'You can take beer'
+                document.getElementById('result').style.color = 'gold';
+            }
+            else if (userAge <= 60 && userGender == 'female') {
+                apply = 'You can take red wine'
+                document.getElementById('result').style.color = 'wine';
+            }
+            document.getElementById('result').innerHTML = drink;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // let x = 5;
         //  let y = 2;
-        // alert (x += y) 
+        // alert (x += y)
 
         // let gender = prompt('male/female?')
         // if (gender != 'male') {
@@ -22,20 +91,20 @@
         //         alert('admission granted')
         //     }
 
-        let age = prompt('Your age?')
-        let gender = prompt('Male/Female?')
-        if (age < 18) {
-            alert('take water only')
-        }
-        else if (age > 18 && gender == 'Female') {
-            alert('take soft drink')
-        }
-        else if (age > 18 && gender == 'Male') {
-            alert('take alcohol')
-        }
-        else {
-            alert('Nothing for you')
-        }
+        // let age = prompt('Your age?')
+        // let gender = prompt('Male/Female?')
+        // if (age < 18) {
+        //     alert('take water only')
+        // }
+        // else if (age > 18 && gender == 'Female') {
+        //     alert('take soft drink')
+        // }
+        // else if (age > 18 && gender == 'Male') {
+        //     alert('take alcohol')
+        // }
+        // else {
+        //     alert('Nothing for you')
+        // }
     </script>
 </body>
 
