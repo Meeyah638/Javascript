@@ -65,12 +65,11 @@
     <script>
         let x = new Date().getHours();
         let greet;
-        if (x >= 12 && x <= 11.59)
-            greet = 'Good Morning';
-        else if (x >= 12 && x <= 16)
-            greet = 'Good Afternoon';
-        else if (x >= 16 && x <= 24)
+        if (x >= 12 && x <= 11.59) { greet = 'Good Morning'; }
+        else if (x < 16) { greet = 'Good Afternoon'; }
+        else if (x < 23) {
             greet = 'Good Evening';
+        }
 
         document.getElementById('time').innerHTML = greet;
     </script>
