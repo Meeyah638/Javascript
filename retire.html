@@ -70,19 +70,26 @@
             let yearsUntilRetirement = (yearofBirth, userName) => {
                 let retirementAge = 65;
                 let currentYear = new Date().getFullYear();
-                let userAge = currentYear - yearofBirth;
+                let userAge = currentYear - Number(yearofBirth);
                 return retirementAge - userAge;
             }
+            
             let x = prompt('your name please?');
             let y = prompt('your year of birth please?');
 
-            console.log(`${x}, you have ${yearsUntilRetirement(y, x)} years left in the service`)
-            if (yearsUntilRetirement(x) > 65) {
+            console.log(yearsUntilRetirement(y, x))
+            if (yearsUntilRetirement(y, x) <= 0) {
                 console.log('You are old enough to retire');
             }
-            else if (yearsUntilRetirement(x) > 65) {
-                console.log('You are not eligible to retire');
+            else if(yearsUntilRetirement(y,x) == 1){
+                console.log(`${x}, you have ${yearsUntilRetirement(y, x)} year left in the service`)
             }
+            else {
+                console.log(`${x}, you have ${yearsUntilRetirement(y, x)} years left in the service`)
+
+            }
+            
+           
         </script>
     </body>
 
