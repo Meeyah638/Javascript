@@ -63,15 +63,19 @@
     <p id="time" style="font-weight: bold;font-size: 40px;margin-left: 100px;"></p>
 
     <script>
-        // let x = new Date().getHours();
-        // let greet;
-        // if (x >= 12 && x <= 11.59) { greet = 'Good Morning'; }
-        // else if (x < 16) { greet = 'Good Afternoon'; }
-        // else if (x < 23) {
-        //     greet = 'Good Evening';
-        // }
+        let x = new Date().getHours();
+        let greet;
+        if (x < 12) {
+            greet = 'Good Morning';
+        }
+        else if (x < 16) {
+            greet = 'Good Afternoon';
+        }
+        else if (x < 23) {
+            greet = 'Good Evening';
+        }
 
-        // document.getElementById('time').innerHTML = greet;
+        document.getElementById('time').innerHTML = greet;
 
         // let x = new Date().getHours();
         // let greet = prompt('What is the time?')
@@ -98,7 +102,7 @@
         //             break;
         // default:
         //         }
-       
+
 
 
     </script>
