@@ -105,14 +105,14 @@ let calculateLoan = addEventListener('click', function () {
     let monthlyRepayment = (totalAmountToPay / Duration);
     monthlyRepayment = Number(monthlyRepayment);
     if (isNaN(loanAmount) || (loanAmount == '')) {
-        document.getElementById('result').textContent = "Please enter values";
+        document.getElementById('solution').textContent = "Please enter values";
     }
     else if (Duration == 1) {
-        document.getElementById('result').textContent = `Your repayment is ${monthlyRepayment} per month if you 
+        document.getElementById('solution').textContent = `Your repayment is ${monthlyRepayment} per month if you 
         borrow ${loanAmount} for ${Duration} month`
     }
     else {
-        document.getElementById('result').textContent = `Your repayment is ${monthlyRepayment} per month if you 
+        document.getElementById('solution').textContent = `Your repayment is ${monthlyRepayment} per month if you 
         borrow ${loanAmount} for ${Duration} months`
     }
 })

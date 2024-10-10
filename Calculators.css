@@ -1,13 +1,12 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: black;
-    color: #fff;
+    background-color: brown !important;
+    
 }
 
 .allcalc {
     background: brown;
-    display: flex;
-    justify-content: space-between;
+    padding: 50px;
 }
 
 .allcalc h1 {
@@ -15,6 +14,18 @@ body {
     font-weight: bold;
 }
 
+.allcalc h3 {
+    font-size: 20px;
+    color: black;
+    margin-top: 20px;
+}
+
+.allcalc h4 {
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+    margin-top: 10px;
+}
 
 .simplecalc {
     border: none;
@@ -22,11 +33,31 @@ body {
     background: bisque;
     text-align: center;
     margin: 20px 30px;
+    padding: 30px 50px;
 }
 
 .first input {
     border: none;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
 
+.firin input {
+    padding: 10px 20px;
+}
+
+.plus {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.secin input {
+    padding: 10px 20px;
+}
+
+.result {
+    font-weight: bold;
+    font-size: 15px;
 }
 
 .second button {
@@ -40,13 +71,76 @@ body {
 }
 
 .investcalc {
+    border: none;
+    border-radius: 10px;
     background: bisque;
-    border: 1px solid black;
+    text-align: center;
+    margin: 20px 0px;
+}
 
+.investcalc input {
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+}
+
+.investcalc button {
+    background: brown;
+    color: white;
+    border: none;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.investcalc h5 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.forsel select {
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    padding: 5px 10px;
 }
 
 .loancalc {
+    border: none;
+    border-radius: 10px;
     background: bisque;
-    border: 1px solid black;
+    text-align: center;
+    margin: 20px auto;
+}
 
+.loancalc h5 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.loancalc input {
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+}
+
+.forsell select {
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    padding: 5px 10px;
+}
+.loancalc button {
+    background: brown;
+    color: white;
+    border: none;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 20px;
 }
