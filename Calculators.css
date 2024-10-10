@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: #fff;
+}
+
+.allcalc {
+    background: brown;
+    display: flex;
+    justify-content: space-between;
+}
+
+.allcalc h1 {
+    color: black;
+    font-weight: bold;
+}
+
+
+.simplecalc {
+    border: none;
+    border-radius: 10px;
+    background: bisque;
+    text-align: center;
+    margin: 20px 30px;
+}
+
+.first input {
+    border: none;
+
+}
+
+.second button {
+    border-radius: 5px;
+    padding: 8px 20px;
+    font-size: 20px;
+    border: none;
+    background: brown;
+    color: white;
+    font-weight: bold;
+}
+
+.investcalc {
+    background: bisque;
+    border: 1px solid black;
+
+}
+
+.loancalc {
+    background: bisque;
+    border: 1px solid black;
+
+}

@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GREETINGS</title>
+    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-        </script>
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
-        </script>
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
 </head>
 
 <body style="font-family: Arial, Helvetica, sans-serif;">
@@ -62,62 +62,48 @@
         </div>
     </nav>
 
-    <h2 style="font-weight: bold;color: blueviolet;text-align: center;">A time-based greeting:</h2>
-    <p id="time" style="font-weight: bold;font-size: 40px;margin-left: 100px;"></p>
-
+    <h3>How much do you want to borrow?</h3><br>
+    <input type="text" id="loan" placeholder="Loan Amount"><br>
+    <h4 id="interest">Note:Interest of 20% per month</h4>
+    <form> <select name="duration" id="duration">
+            <option value="1">1 month</option>
+            <option value="2">2 months</option>
+            <option value="3">3 months</option>
+            <option value="4">4 months</option>
+            <option value="5">5 months</option>
+            <option value="6">6 months</option>
+            <option value="7">7 months</option>
+            <option value="8">8 months</option>
+            <option value="9">9 months</option>
+            <option value="10">10 months</option>
+            <option value="11">11 months</option>
+            <option value="12">12 months</option>
+        </select> </form><br><br>
+    <button id="calculate">Calculate</button>
+    <h3 id="result"></h3>
     <script>
-        // let x = new Date().getHours();
-        // let greet;
-        // if (x < 12) {
-        //     greet = 'Good Morning';
-        // }
-        // else if (x < 16) {
-        //     greet = 'Good Afternoon';
-        // }
-        // else {
-        //     greet = 'Good Evening';
-        // }
 
-        // document.getElementById('time').innerHTML = greet;
-
-        // let x = new Date().getHours();
-        // let greet = prompt('What is the time?')
-
-        // switch (greet) {
-        //     case greet < 12:
-        //         console.log('Good Morning');
-        //         break;
-        //     case greet < 16:
-        //         console.log('Good Afternoon');
-        //         break;
-        //     case greet < 23:
-        //         console.log('Good Evening');
-
-
-        // }
-
-        // let naijaAge = prompt('how old is Nigeria?');
-        // naijaAge = Number(naijaAge);
-
-        // switch (naijaAge) {
-        //     case 50:
-        //         console.log('Naija is older than 50');
-        //         break;
-        //     case 60:
-        //         console.log('Add a little more');
-        //         break;
-        //     case 64:
-        //         alert('correct');
-        //         break;
-        //     case 65:
-        //         alert('A bit lower than that');
-        //         break;
-        //     default:
-        //         alert('You are wrong');
-        // }
-
-
-
+        let calculateLoan = addEventListener('click', function () {
+            let loanAmount = document.getElementById('loan').value;
+            loanAmount = Number(loanAmount);
+            let Duration = document.getElementById('duration').value;
+            let interestPerMonths = document.getElementById('interest').innerHTML;
+            let totalAmountToPay = [(20 / 100) + loanAmount];
+            totalAmountToPay = Number(totalAmountToPay)
+            let monthlyRepayment = (totalAmountToPay / Duration);
+            monthlyRepayment = Number(monthlyRepayment);
+            if (isNaN(loanAmount) || (loanAmount == '')) {
+                document.getElementById('result').textContent = "Please enter values";
+            }
+            else if (Duration == 1) {
+                document.getElementById('result').textContent = `Your repayment is ${monthlyRepayment} per month if you 
+                borrow ${loanAmount} for ${Duration} month`
+            }
+            else {
+                document.getElementById('result').textContent = `Your repayment is ${monthlyRepayment} per month if you 
+                borrow ${loanAmount} for ${Duration} months`
+            }
+        })
     </script>
 </body>
 
