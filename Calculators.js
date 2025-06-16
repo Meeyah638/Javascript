@@ -68,51 +68,51 @@ divide.addEventListener('click', function () {
 
 
 
-
- 
- // Investment Calculator
- let calculate = addEventListener('click', function () {
-    let investedAmount = document.getElementById('amount').value;
-    investedAmount = Number(investedAmount);
-    let Duration = document.getElementById('duration').value;
-    let ROIPerMonths = document.getElementById('ROI').innerHTML;
-    let totalROI = Duration * [(15 / 100) * (investedAmount)];
-    totalROI = Number(totalROI);
-    let totalWithdrawal = totalROI + investedAmount;
-    totalWithdrawal = Number(totalWithdrawal);
-
+// Investment Calculator
+let calculateButton = document.getElementById('calculate');
+calculateButton.addEventListener('click', function () {
+    let investedAmount = Number(document.getElementById('amount').value);
+    let Duration = Number(document.getElementById('duration').value);
+    let ROIPerMonths = Number(document.getElementById('ROI').innerHTML);
+    let totalROI = Number(Duration * [(15 / 100) * (investedAmount)]);
+    let totalWithdrawal = Number(totalROI + investedAmount);
     if (isNaN(investedAmount) || (investedAmount == '')) {
         document.getElementById('result').textContent = "Please enter values";
     }
-    else if(Duration == 1){
+    else if (Duration == 1) {
         document.getElementById('result').textContent = `You will withdraw #${totalWithdrawal} if you invest 
         ${investedAmount} in our business for ${Duration} month`
     }
-  else{
-      document.getElementById('result').textContent = `You will withdraw #${totalWithdrawal} if you invest 
+    else {
+        document.getElementById('result').textContent = `You will withdraw #${totalWithdrawal} if you invest 
             ${investedAmount} in our business for ${Duration} months`
-  }
+    }
 })
+ 
 
 // Loan Calculator
-let calculateLoan = addEventListener('click', function () {
-    let loanAmount = document.getElementById('loan').value;
-    loanAmount = Number(loanAmount);
-    let Duration = document.getElementById('duration').value;
-    let interestPerMonths = document.getElementById('interest').innerHTML;
-    let totalAmountToPay = [(20 / 100) + loanAmount];
-    totalAmountToPay = Number(totalAmountToPay)
-    let monthlyRepayment = (totalAmountToPay / Duration);
-    monthlyRepayment = Number(monthlyRepayment);
-    if (isNaN(loanAmount) || (loanAmount == '')) {
-        document.getElementById('solution').textContent = "Please enter values";
+let calculateLoan = document.getElementById('calculateL');
+calculateLoan.addEventListener('click', function () {
+    let loanAmount = Number(document.getElementById('loan').value);
+    let Duration = Number(document.getElementById('duration').value);
+    let interestPerMonths = 20;
+   let totalAmountToPay = Number(loanAmount + ((interestPerMonths / 100) * loanAmount * Duration));
+    let monthlyRepayment = totalAmountToPay / Duration;
+    if (loanAmount = ''|| isNaN(loanAmount)) {
+        document.getElementById('solution').textContent = "Please enter valid values";
+        return;
+    } 
+    
+    if (Duration === 1) {
+        document.getElementById('solution').textContent = `Your repayment is ₦${monthlyRepayment} per month if 
+        you borrow ₦${loanAmount} for ${Duration} month`
+    } else {
+        document.getElementById('solution').textContent = `Your repayment is ₦${monthlyRepayment} per month if 
+        you borrow ₦${loanAmount} for ${Duration} months`
     }
-    else if (Duration == 1) {
-        document.getElementById('solution').textContent = `Your repayment is ${monthlyRepayment} per month if you 
-        borrow ${loanAmount} for ${Duration} month`
-    }
-    else {
-        document.getElementById('solution').textContent = `Your repayment is ${monthlyRepayment} per month if you 
-        borrow ${loanAmount} for ${Duration} months`
-    }
-})
+});
+
+
+
+    
+    
