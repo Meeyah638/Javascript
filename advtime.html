@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Reminder</title>
+</head>
+
+<body>
+  <select name="month" id="month">
+    <option value="January">January</option>
+    <option value="February">February</option>
+    <option value="March">March</option>
+    <option value="April">April</option>
+    <option value="May">May</option>
+    <option value="June">June</option>
+    <option value="July">July</option>
+    <option value="August">August</option>
+    <option value="September">September</option>
+    <option value="October">October</option>
+    <option value="November">November</option>
+    <option value="December">December</option>
+  </select>
+  <input type="text" id="=bday">
+  <button onclick="checkBirthday()">Check Birthday</button>
+  <div id="output"></div>
+</body>
+<script>
+  function checkBirthday() {
+    let monthList = document.getElementById('month');
+    let input = document.getElementById('bday');
+    let month = monthList.value;
+    let day = input.value;
+    let thisYear = new Date().getFullYear();
+    let thisMonth = new Date().getMonth() + 1;
+    if (thisMonth < month) {
+      thisYear += 1;
+    }
+    let myBirthday = new Date(`${thisYear}-${month}-${day}`);
+    document.getElementById('output').innerHTML = `Next birthday is on: ${myBirthday.toDateString()}`;
+  }
+
+  // let now = new Date().getTime();
+  // let distance = mytime - now;
+  // let days = Math.floor(distance / (24 * 60 * 60 * 1000));
+  // let hours = Math.floor(distance % (24 * 60 * 60 * 1000) / (60 * 60 * 1000));
+  // let Minutes = Math.floor(distance % (60 * 60 * 1000) / (60 * 1000));
+  // let seconds = Math.floor(distance % (60 * 1000) / (1000));
+  // console.log(`${days}D:${hours}H: ${minutes}M:${seconds}S`)
+  // if (distance <= 0) {
+  //     clearInterval(k)
+  // }
+</script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //     let yourbirthmonth = prompt('which month were you born');
+        //     let yourbirthdate = prompt('which date were you born');
+        //     let currentyear = new Date().getFullYear()
+        //     let mytime=new Date(`${yourbirthmonth} ${yourbirthdate}, ${currentyear}`).getTime();
+        //     function mybirthday(){
+        //         let now = new Date().getTime();
+        //         let distance=mytime-now;
+        //         console.log(distance)
+        //         if(distance<=0){
+        //             clearInterval(k)
+        //         }
+        //     }
+        //    let k = setInterval(mybirthday, 1000);
+        //     let counter=0;
+        //    let x= setInterval(function() {
+        //         counter +=1;
+        //         if(counter>=10){
+        //             clearInterval(x)
+        //         }alert(counter)
+        //     }, 1000);
+
+        // setTimeout(funct,delay,arg1,arg2,arg3)
+        function greet(who, phrase) {
+            alert(`${phrase},${who}`)
+        }
+        setTimeout(greet, 2000, 'Sam', 'Hello')
+        let birthdays = [];
+
+function addBirthday() {
+  const name = document.getElementById('name').value;
+  const date = document.getElementById('date').value;
+
+  if (!name || !date) {
+    alert('Please enter both name and date.');
+    return;
+  }
+
+  birthdays.push({ name, date });
+  displayBirthdays();
+
+  // clear inputs
+  document.getElementById('name').value = '';
+  document.getElementById('date').value = '';
+}
+
+function displayBirthdays() {
+  const list = document.getElementById('birthdayList');
+  list.innerHTML = ''; // clear previous
+
+  birthdays.forEach((b, index) => {
+    const card = document.createElement('div');
+    card.className = 'birthday-card';
+    card.innerHTML = `
+      ${b.name} — ${b.date}
+    `;
+    list.appendChild(card);
+  });
+}
+
+function checkBirthdays() {
+  const today = new Date();
+  const todayStr = today.toISOString().slice(5, 10); // get MM-DD
+
+  let reminderText = '';
+
+  birthdays.forEach(b => {
+    if (b.date.slice(5, 10) === todayStr) {
+      reminderText += `🎉 Today is ${b.name}'s birthday!<br>`;
+    }
+  });
+
+  document.getElementById('reminder').innerHTML = re
+
+    </script>
+</body>
+
+</html>
+build a birthday application that will help to set birthdays for family members using form -->

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+</head>
+
+<body>
+    <form name="form1" onsubmit="return FormValidation()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" />
+        <span id="nameError"></span>
+        <br><br>
+
+        <label for="age">Age:</label>
+        <input id="age" name="age" placeholder="Enter your age" />
+        <span id="ageError"></span>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" placeholder="Enter your email">
+        <span id="emailError"></span><br><br>
+
+        <label for="zipcode">Zipcode:</label>
+        <input id="zipcode" name="zipcode" placeholder="Enter your zipcode">
+        <span id="zipError"></span><br><br>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="">Select Country</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Cameroon">Cameroon</option>
+        </select>
+        <span id="countryError"></span><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function FormValidation() {
+            let myname = document.form1.name.value;
+            let myage = document.form1.age.value;
+            let myemail = document.form1.email.value;
+            let myzipcode = document.form1.zipcode.value;
+            let mycountry = document.form1.country.value;
+
+            document.getElementById('nameError').innerHTML = '';
+            document.getElementById('ageError').innerHTML = '';
+            document.getElementById('emailError').innerHTML = '';
+            document.getElementById('zipError').innerHTML = '';
+            document.getElementById('countryError').innerHTML = '';
+
+            let valid = true;
+            let nameformat = /^[a-zA-Z]+$/;
+            if (!myname.match(nameformat)) {
+                document.getElementById('nameError').innerHTML = 'Name is required';
+                valid = false;
+            }
+            let ageformat = /^[0-9]+$/;
+            if (!myage.match(ageformat)) {
+                document.getElementById('ageError').innerHTML = 'Enter a valid age';
+                valid = false;
+            }
+            let emailformat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!myemail.match(emailformat)) {
+
+                document.getElementById('emailError').innerHTML = 'Enter a valid email';
+                valid = false;
+            }
+            let zipformat = /^\d{5}(-\d{4})?$/;
+            if (!myzipcode.match(zipformat)) {
+                document.getElementById('zipError').innerHTML = 'Zipcode must be at least 5 digits';
+                valid = false;
+            }
+
+            if (mycountry == '') {
+                document.getElementById('countryError').innerHTML = 'Please select a country';
+                valid = false;
+            }
+            return valid;
+        }
+    </script>
+</body>
+
+</html>

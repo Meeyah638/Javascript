@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uber App</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .screen {
+            display: none;
+            background: green;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        input {
+            width: 80%;
+            padding: 8px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #000;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #333;
+        }
+
+        .summary {
+            background: #eee;
+            color: #000;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .summary div {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+        }
+
+        .timer {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+
+        .checkmark {
+            font-size: 3em;
+            color: #0f0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="screen1" class="screen active">
+        <h2>Uber</h2>
+        <p>Book a ride now</p>
+        <input type="text" id="from" placeholder="From">
+        <input type="text" id="to" placeholder="To">
+        <button onclick="showConfirmation()">Book Ride →</button>
+    </div>
+
+    <div id="screen2" class="screen">
+        <p>You are requesting a ride from <span id="confirmFrom"></span> to <span id="confirmTo"></span>.</p>
+        <p>Please confirm your ride.</p>
+        <button onclick="backToBooking()">Cancel</button>
+        <button onclick="startRide()">Start →</button>
+    </div>
+
+    <div id="screen3" class="screen">
+        <div class="timer" id="timer">00:00</div>
+        <p>Ride in progress...<br>You are now moving from <span id="rideFrom"></span> to <span id="rideTo"></span></p>
+        <button onclick="pauseRide()">Pause</button>
+        <button onclick="stopRide()">Stop Ride</button>
+    </div>
+
+    <div id="screen4" class="screen">
+        <div class="checkmark">✓</div>
+        <p>Ride has Ended</p>
+        <div class="summary">
+            <div><span>Base Fare</span><span>#2000</span></div>
+            <div><span>Time Fare</span><span>#<span id="timeFare">0</span></span></div>
+            <div><span>Initial Total</span><span>#<span id="initialTotal">0</span></span></div>
+            <div><span>Tax (10%)</span><span>#<span id="tax">0</span></span></div>
+            <div><strong>Total Amount</strong><strong>#<span id="totalAmount">0</span></strong></div>
+        </div>
+        <button onclick="makePayment()">Make payment</button>
+    </div>
+
+    <script>
+        let timerInterval;
+        let seconds = 0;
+        let paused = false;
+
+        function showConfirmation() {
+            let from = document.getElementById('from').value;
+            let to = document.getElementById('to').value;
+            if (!from || !to) {
+                alert('Please fill both fields.');
+                return;
+            }
+            document.getElementById('confirmFrom').textContent = from;
+            document.getElementById('confirmTo').textContent = to;
+            showScreen(2);
+        }
+
+        function backToBooking() {
+            showScreen(1);
+        }
+
+        function startRide() {
+            document.getElementById('rideFrom').textContent = document.getElementById('from').value;
+            document.getElementById('rideTo').textContent = document.getElementById('to').value;
+            seconds = 0;
+            updateTimer();
+            timerInterval = setInterval(() => {
+                if (!paused) {
+                    seconds++;
+                    updateTimer();
+                }
+            }, 1000);
+            showScreen(3);
+        }
+
+        function pauseRide() {
+            paused = !paused;
+            alert(paused ? 'Ride paused' : 'Ride resumed');
+        }
+
+        function stopRide() {
+            clearInterval(timerInterval);
+            calculateFare();
+            showScreen(4);
+        }
+
+        function updateTimer() {
+            let hrs = Math.floor(seconds / 3600);
+            let mins = Math.floor((seconds % 3600) / 60);
+            let secs = seconds % 60;
+
+            let timeStr =
+                (hrs < 10 ? '0' : '') + hrs + ':' +
+                (mins < 10 ? '0' : '') + mins + ':' +
+                (secs < 10 ? '0' : '') + secs;
+
+            document.getElementById('timer').textContent = timeStr;
+        }
+
+
+        function calculateFare() {
+            let baseFare = 2000;
+            let timeFare = seconds * 2; // #2 per second
+            let initialTotal = baseFare + timeFare;
+            let tax = Math.round(initialTotal * 0.10);
+            let totalAmount = initialTotal + tax;
+
+            document.getElementById('timeFare').textContent = timeFare;
+            document.getElementById('initialTotal').textContent = initialTotal;
+            document.getElementById('tax').textContent = tax;
+            document.getElementById('totalAmount').textContent = totalAmount;
+        }
+
+        function makePayment() {
+            alert('Payment made successfully!');
+            location.reload(); // restart app
+        }
+
+        function showScreen(n) {
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById('screen' + i).classList.remove('active');
+            }
+            document.getElementById('screen' + n).classList.add('active');
+        }
+    </script>
+</body>
+
+</html>

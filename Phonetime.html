@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+</head>
+
+<body>
+    <h1 id="time"></h1>
+    <h3 id="date"></h3>
+
+    <script>
+        function currentTime() {
+            let date = new Date();
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+            let session = "AM";
+
+            if (hours == 0) {
+                hours = 12;
+            } else if (hours > 12) {
+                hours -= 12;
+                session = "PM";
+            }
+
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            let time = hours + ":" + minutes + ":" + seconds + " " + session;
+            document.getElementById('time').textContent = time;
+
+
+            let WeekDays = { weekday: 'long', month: 'long', day: 'numeric' };
+            let dateStr = date.toLocaleDateString(undefined, WeekDays);
+            document.getElementById('date').textContent = dateStr;
+        }
+
+        currentTime();
+        setInterval(currentTime, 1000);
+
+        //         function secout(){
+        // ++x;
+        // let hr=parseInt(x/60*60*1000);
+        // let min=parseInt(x/60);
+        // let sec=parseInt(x%60);
+        // let timeout=hr+':'+""+min+':'+""+sec+''+"";
+        // console.log(timeout)
+        //         }
+    </script>
+</body>
+
+</html>

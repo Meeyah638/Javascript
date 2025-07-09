@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let numbers = [50000, 100000, 31000, 45000];
+        // let sum = 0;
+
+        // numbers.forEach(function (number) {
+        //     sum += number;
+        // });
+
+        const store1 = ['camry', 'honda','venza',  'mercedes', 'ford']
+        const store2 = ['powerbike', 'bicycle', 'tricycle', 'yamaha generator', 'mp3']
+        // we sold honda and bicycle yesterday,using rest, spread and destructuring, create a new total stock for today
+        const [a,, ...restStore1] = store1;
+        const [b, , ...restStore2] = store2;
+        let newstore1=[a, restStore1]
+        let newstore2=[b, restStore2]
+        let totalStock = [...newstore1, ...newstore2];
+
+console.log(totalStock);
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+      
+    </script>
+</body>
+
+</html>

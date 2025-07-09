@@ -1,0 +1,104 @@
+DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My List App</title>
+  <style>
+    body {
+      margin-left: 300px;
+      font-family: Arial, sans-serif;
+    }
+    .mydiv {
+      background: red;
+      color: white;
+      padding: 10px;
+      margin-top: 10px;
+    }
+    .announcement {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <ul class="mylist">
+  </ul>
+
+  <input id="foodstuff" type="text" placeholder="Enter item">
+  <button onclick="addnew()">Add Content</button>
+
+  <div class="mydiv">
+    <span class="announcement" onclick="this.parentElement.style.display='none'">
+      <p id="ade">ANNOUNCEMENT! You can now join ADC, text 3456 to 311.</p>
+    </span>
+  </div>
+
+  <script>
+    
+    function addnew() {
+      const input = document.getElementById('foodstuff').value;
+      const ul = document.querySelector('.mylist');
+      if(input.trim() !== "") {
+        const li = document.createElement('li');
+        li.textContent = input;
+        ul.appendChild(li);
+      }
+    }
+
+    const theparty = document.getElementById('ade');
+    theparty.addEventListener('click', function() {
+      console.log(this.parentNode);
+    });
+  </script>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="myheader">my foodstuff</h1>
+    <h1 class="myheader">to purchase</h1>
+    <ul class="mylist"></ul>
+    <input id="foodstuff">
+    <button onclick="addnew()">add content</button>
+    <li class="mylist"></li>
+    <span class="announcement" onclick="this.parentElement.style.display='none'"></span>
+</body>
+
+</html>
+
+<script> -->
+   
+    //     let myheading=document.getElementsByClassName('myheader')
+    //     myheading[0].style.background='red';
+    
+    // function addnew() {
+    //     let ele = document.createElement('li')
+    //     let myadd = document.getElementById('foodstuff').value;
+    //     let mycontent = document.createTextNode(myadd);
+    //     ele.appendChild(mycontent);
+    //     document.querySelector('mylist').appendChild(ele);
+    // }
+    // // let thebody=document.querySelector('.mylist')
+    // // thebody.insertBefore(ele,thebody.childNodes[1]);
+
+    // function addnew() {
+    //     let ele = document.createElement('li')
+    //     ele.className = 'mylist;'
+    //     console.log(ele)
+    //     let myadd = document.getElementById('foodstuff').value;
+    //     let mycontent = document.createTextNode(myadd);
+    //     // let myclass = getElementsByClassName('mylist');
+    //     // myclass[0].style.background = 'red'
+    //     ele.appendChild(mycontent);
+    //     let thebody = document.querySelector('.mylist')
+    //     thebody.appendChild(ele);
+    //     ele.className='mylistone';
+    // }
+</script>
