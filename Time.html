@@ -30,28 +30,40 @@
                 <div class="offcanvas-body" style="list-style-type: none;">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" style="font-weight: 600;">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Day One</a>
+                            <a class="nav-link active" href="index.html">Javascript</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="const.html">Day Two</a>
+                            <a class="nav-link" href="AboutMe.html">About Me</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Scoreass.html">Day Three</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="comparison.html">Day Four</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Time.html">Greetings</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="retire.html">Retirement Age</a>
+                            <a class="nav-link" href="Time.html">Day Event</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="Calculators.html">Calculators</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="Guess.html">Guess: 50-70</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="prime number.html">Prime Numbers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Datatype.html">Data type</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Hotel.html">Hotel booking</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="UBER.html">Uber</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="PGSchool.html">PG School</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Birthday.html">Birthday</a>
                         </li>
                     </ul>
                 </div>
@@ -59,29 +71,34 @@
         </div>
     </nav>
 
-    <h2 style="font-weight: bold;color: blueviolet;text-align: center;">A time-based greeting:</h2>
-    <p id="time" style="font-weight: bold; font-size: 40px; text-align: center;"></p>
-
+    <h2 style="font-weight: bold; color: blueviolet; text-align: center;">A time-based greeting:</h2>
+    <p id="time" style="font-weight: bold; font-size: 32px; text-align: center;"></p>
+    <p id="clock" style="font-size: 20px; text-align: center; color: rgb(96, 95, 95);font-weight: bold;"></p>
 
     <script>
-       
- 
+        function updateGreeting() {
+            let now = new Date();
+            let hour = now.getHours();
+            let minutes = now.getMinutes().toString().padStart(2, "0");
+            let seconds = now.getSeconds().toString().padStart(2, "0");
 
-        let x = new Date().getHours();
-        let greet;
-        if (x < 12) {
-            greet = 'Good Morning';
+            // Greeting
+            let greet;
+            if (hour < 12) {
+                greet = "☀️ Good Morning!";
+            } else if (hour < 16) {
+                greet = "🌤️ Good Afternoon!";
+            } else {
+                greet = "🌙 Good Evening!";
+            }
+            document.getElementById("time").textContent = greet;
+            document.getElementById("clock").textContent =
+                `Current time: ${hour}:${minutes}:${seconds}`;
         }
-        else if (x < 16) {
-            greet = 'Good Afternoon';
-        }
-        else {
-            greet = 'Good Evening';
-        }
-
-        document.getElementById('time').innerHTML = greet;
-
+        updateGreeting();
+        setInterval(updateGreeting, 1000);
     </script>
+
 </body>
 
 </html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comparison and logical operators</title>
+    <title>About Me</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -13,6 +13,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
+
+    <style>
+        .About {
+            max-width: 600px;
+            margin-top: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: blueviolet;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body style="font-family: Arial, Helvetica, sans-serif;">
@@ -30,62 +53,80 @@
                 <div class="offcanvas-body" style="list-style-type: none;">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" style="font-weight: 600;">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Day One</a>
+                            <a class="nav-link active" href="index.html">Javascript</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="const.html">Day Two</a>
+                            <a class="nav-link" href="AboutMe.html">About Me</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Scoreass.html">Day Three</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="comparison.html">Day Four</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Time.html">Greetings</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="retire.html">Retirement Age</a>
+                            <a class="nav-link" href="Time.html">Day Event</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="Calculators.html">Calculators</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="Guess.html">Guess: 50-70</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="prime number.html">Prime Numbers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Datatype.html">Data type</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="login.html">Login</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="Hotel.html">Hotel booking</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="UBER.html">Uber</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="PGSchool.html">PG School</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Birthday.html">Birthday</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
-    <div class="container">
-        <h1>Comparison operators</h1>
-        <h3>Comparison operators are used in logical statements to determine equality or difference between variables or
-            values.<br>
-            Comparison operators can be used in conditional statements to compare values and take action depending on
-            the result.</h3>
-        <h1>Logical Operators</h1>
-        <h3> Logical operators are used to determine the logic between variables or values. <br>
-            <br>
-        </h3>
-        <h3>
-            Example:</h3>
-        <p style="font-weight: bold;font-size: 20px;"> var isTrue = ('yellow' === 'green') && (4 >= 4); <br><br></p>
+    <div class="About container">
+        <h1>About Me</h1>
+        <p id="intro"></p>
+        <div class="container" style="border: 1px solid rgb(248, 247, 247);margin: 70px auto;
+    background-color: rgb(252, 246, 246);font-weight: bold;font-size: 20px;border-radius: 20px;">
+            <code>
+                let myself = {
+            name: 'Muhammed-Rabiu Islamiyah',
+            Skills: ['HTML', 'CSS', 'Bootstrap', 'Git and Github', 'Javascript', 'React'],
+            hobbies: ['Coding', 'Reading stories', 'Watching movies'],
+        }
 
-        <h4> In the example above, we check if the string 'yellow' is equal to the string 'green' and (&&) if 4 is
-            greater
-            than <br>
-            or equal to 4. Let’s break this down into the two comparison expressions. <br>
-
-            The first expression is false, because the string 'yellow' is not the same (equal) as the string 'green'.
-            <br>
-            The second expression is true, because the number 4 is greater than or equal to 4. <br>
-            The && operator requires that both expressions be true in order for the expression to be truthy. <br>
-        </h4>
+            document.getElementById("intro").textContent =
+            `Hello, I'm ${myself.name}, I'm a frontend developer.`;
+    </code>
+        </div>
     </div>
+    <script>
+        let myself = {
+            name: 'Muhammed-Rabiu Islamiyah',
+            Skills: ['HTML', 'CSS', 'Bootstrap', 'Git and Github', 'Javascript', 'React'],
+            hobbies: ['Coding', 'Reading stories', 'Watching movies'],
+        }
+
+        document.getElementById("intro").textContent =
+            `Hello, I'm ${myself.name}, I'm a frontend developer.
+            My hobbies are ${myself.hobbies}. My skills are: ${myself.Skills}` 
+    </script>
+</body>
+
+</html>
+
+</script>
+
 </body>
 
 </html>

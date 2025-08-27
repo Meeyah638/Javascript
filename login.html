@@ -28,6 +28,7 @@ generate button -->
             margin: 0;
             padding: 0;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
         }
 
         body {
@@ -41,6 +42,7 @@ generate button -->
             justify-content: center;
             height: 100%;
             gap: 150px;
+            margin: 60px 5px 0px 10px;
         }
 
         .createacct {
@@ -145,6 +147,7 @@ generate button -->
 </head>
 
 <body>
+
     <body style="font-family: Arial, Helvetica, sans-serif;">
         <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" style="background: white;">
             <div class="container">
@@ -161,31 +164,40 @@ generate button -->
                     <div class="offcanvas-body" style="list-style-type: none;">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" style="font-weight: 600;">
                             <li class="nav-item">
-                                <a class="nav-link active" href="index.html">Day One</a>
+                                <a class="nav-link active" href="index.html">Javascript</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="const.html">Day Two</a>
+                                <a class="nav-link" href="AboutMe.html">About Me</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Scoreass.html">Day Three</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="comparison.html">Day Four</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="Time.html">Greetings</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="retire.html">Retirement Age</a>
+                                <a class="nav-link" href="Time.html">Day Event</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="Calculators.html">Calculators</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="Guess.html">Guess: 50-70</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="prime number.html">Prime Numbers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Datatype.html">Data type</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="login.html">Login</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="Hotel.html">Hotel booking</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="UBER.html">Uber</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="PGSchool.html">PG School</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Birthday.html">Birthday</a>
                             </li>
                         </ul>
                     </div>
@@ -193,110 +205,111 @@ generate button -->
             </div>
         </nav>
 
-    <div class="container loginpage">
-        <div class="createacct">
-            <h2>Create your account</h2><br>
-            <p>Already have an account? <a href="#">Log in</a></p><br>
-            <h3>Account Details</h3><br>
-            <form>
-                <label for="email">Enter your Email</label><br>
-                <input type="email" id="email" name="email" required><br>
-                <span id="emailMessage"></span><br><br>
+        <div class="container loginpage">
+            <div class="createacct">
+                <h2>Create your account</h2><br>
+                <p>Already have an account? <a href="#">Log in</a></p><br>
+                <h3>Account Details</h3><br>
+                <form>
+                    <label for="email">Enter your Email</label><br>
+                    <input type="email" id="email" name="email" required><br>
+                    <span id="emailMessage"></span><br><br>
 
-                <label for="username">Create a Username</label><br>
-                <input type="text" id="username" name="username" required><br>
-                <span id="usernameMessage"></span><br><br>
+                    <label for="username">Create a Username</label><br>
+                    <input type="text" id="username" name="username" required><br>
+                    <span id="usernameMessage"></span><br><br>
 
-                <label for="password">Create a Password</label><br>
-                <div class="password-wrapper">
-                    <input type="password" id="password" name="password" required>
-                    <i class="fa fa-eye-slash" id="togglePassword"></i>
-                </div><br>
-                <ul class="passwordlist">
-                    <li id="lengthCheck"><i class="fa fa-exclamation-triangle"></i> Minimum length 7 characters</li>
-                    <li id="numberSymbolCheck"><i class="fa fa-exclamation-triangle"></i> Must contain 1 number/symbol
-                    </li>
-                    <li id="letterCheck"><i class="fa fa-exclamation-triangle"></i> Must contain 1 letter</li>
-                </ul>
-                <button type="submit">Create My Account</button>
-            </form>
+                    <label for="password">Create a Password</label><br>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" required>
+                        <i class="fa fa-eye-slash" id="togglePassword"></i>
+                    </div><br>
+                    <ul class="passwordlist">
+                        <li id="lengthCheck"><i class="fa fa-exclamation-triangle"></i> Minimum length 7 characters</li>
+                        <li id="numberSymbolCheck"><i class="fa fa-exclamation-triangle"></i> Must contain 1
+                            number/symbol
+                        </li>
+                        <li id="letterCheck"><i class="fa fa-exclamation-triangle"></i> Must contain 1 letter</li>
+                    </ul>
+                    <button type="submit">Create My Account</button>
+                </form>
+            </div>
+            <div class="login-img">
+                <img src="laphone.jpg" alt="Laptop">
+            </div>
         </div>
-        <div class="login-img">
-            <img src="laphone.jpg" alt="Laptop">
-        </div>
-    </div>
 
-    <script>
-        const togglePassword = document.getElementById('togglePassword');
-        const passwordInput = document.getElementById('password');
+        <script>
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
 
-        togglePassword.addEventListener('click', () => {
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-            togglePassword.classList.toggle('fa-eye');
-            togglePassword.classList.toggle('fa-eye-slash');
-        });
-        const lengthCheck = document.getElementById('lengthCheck');
-        const numberSymbolCheck = document.getElementById('numberSymbolCheck');
-        const letterCheck = document.getElementById('letterCheck');
+            togglePassword.addEventListener('click', () => {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                togglePassword.classList.toggle('fa-eye');
+                togglePassword.classList.toggle('fa-eye-slash');
+            });
+            const lengthCheck = document.getElementById('lengthCheck');
+            const numberSymbolCheck = document.getElementById('numberSymbolCheck');
+            const letterCheck = document.getElementById('letterCheck');
 
-        passwordInput.addEventListener('input', () => {
-            const value = passwordInput.value;
-            if (value.length >= 7) {
-                lengthCheck.classList.add('valid');
-            } else {
-                lengthCheck.classList.remove('valid');
-            }
-            if (/[0-9\W]/.test(value)) {
-                numberSymbolCheck.classList.add('valid');
-            } else {
-                numberSymbolCheck.classList.remove('valid');
-            }
-            if (/[a-zA-Z]/.test(value)) {
-                letterCheck.classList.add('valid');
-            } else {
-                letterCheck.classList.remove('valid');
-            }
-        });
-        const emailInput = document.getElementById('email');
-        const emailMessage = document.getElementById('emailMessage');
+            passwordInput.addEventListener('input', () => {
+                const value = passwordInput.value;
+                if (value.length >= 7) {
+                    lengthCheck.classList.add('valid');
+                } else {
+                    lengthCheck.classList.remove('valid');
+                }
+                if (/[0-9\W]/.test(value)) {
+                    numberSymbolCheck.classList.add('valid');
+                } else {
+                    numberSymbolCheck.classList.remove('valid');
+                }
+                if (/[a-zA-Z]/.test(value)) {
+                    letterCheck.classList.add('valid');
+                } else {
+                    letterCheck.classList.remove('valid');
+                }
+            });
+            const emailInput = document.getElementById('email');
+            const emailMessage = document.getElementById('emailMessage');
 
-        emailInput.addEventListener('input', () => {
-            const value = emailInput.value;
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            emailInput.addEventListener('input', () => {
+                const value = emailInput.value;
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-            if (emailPattern.test(value)) {
-                emailMessage.textContent = 'Valid email';
-                emailMessage.classList.add('valid-message');
-                emailMessage.classList.remove('invalid-message');
-            } else {
-                emailMessage.textContent = 'Please enter a valid email address';
-                emailMessage.classList.add('invalid-message');
-                emailMessage.classList.remove('valid-message');
-            }
-        });
+                if (emailPattern.test(value)) {
+                    emailMessage.textContent = 'Valid email';
+                    emailMessage.classList.add('valid-message');
+                    emailMessage.classList.remove('invalid-message');
+                } else {
+                    emailMessage.textContent = 'Please enter a valid email address';
+                    emailMessage.classList.add('invalid-message');
+                    emailMessage.classList.remove('valid-message');
+                }
+            });
 
-        const usernameInput = document.getElementById('username');
-        const usernameMessage = document.getElementById('usernameMessage');
+            const usernameInput = document.getElementById('username');
+            const usernameMessage = document.getElementById('usernameMessage');
 
-        usernameInput.addEventListener('input', () => {
-            const value = usernameInput.value;
-            const usernamePattern = /^[a-zA-Z][a-zA-Z0-9_]{4,}$/;
+            usernameInput.addEventListener('input', () => {
+                const value = usernameInput.value;
+                const usernamePattern = /^[a-zA-Z][a-zA-Z0-9_]{4,}$/;
 
-            if (usernamePattern.test(value)) {
-                usernameMessage.textContent = 'Valid username';
-                usernameMessage.classList.add('valid-message');
-                usernameMessage.classList.remove('invalid-message');
-            } else {
-                usernameMessage.textContent = 'Username must be at least 5 characters long';
-                usernameMessage.classList.add('invalid-message');
-                usernameMessage.classList.remove('valid-message');
-            }
-        });
+                if (usernamePattern.test(value)) {
+                    usernameMessage.textContent = 'Valid username';
+                    usernameMessage.classList.add('valid-message');
+                    usernameMessage.classList.remove('invalid-message');
+                } else {
+                    usernameMessage.textContent = 'Username must be at least 5 characters long';
+                    usernameMessage.classList.add('invalid-message');
+                    usernameMessage.classList.remove('valid-message');
+                }
+            });
 
 
 
-    </script>
-</body>
+        </script>
+    </body>
 
 </html>

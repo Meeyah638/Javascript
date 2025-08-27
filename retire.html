@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -94,4 +94,84 @@
         </script>
     </body>
 
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retirement Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f4f8;
+        }
+        .retirecalculator {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+      .retirecalculator  input {
+            width: 80%;
+            padding: 8px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    .retirecalculator    button {
+            padding: 10px 20px;
+            background: #6a5acd;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+      .retirecalculator  button:hover {
+            background: #5847b0;
+        }
+      .retirecalculator  p {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="retirecalculator">
+        <h2>Retirement Calculator</h2>
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="number" id="birthYear" placeholder="Year of Birth">
+        <br>
+        <button onclick="calculateRetirement()">Calculate</button>
+        <p id="answer"></p>
+    </div>
+
+    <script>
+        function calculateRetirement() {
+            let userName = document.getElementById('name').value;
+            let yearOfBirth = document.getElementById('birthYear').value;
+            let retirementAge = 65;
+            let currentYear = new Date().getFullYear();
+            let userAge = currentYear - Number(yearOfBirth);
+            let yearsLeft = retirementAge - userAge;
+
+            let result = document.getElementById('answer');
+
+            if (yearsLeft <= 0) {
+                result.textContent = `${userName}, you are old enough to retire.`;
+            } else if (yearsLeft === 1) {
+                result.textContent = `${userName}, you have ${yearsLeft} year left in service.`;
+            } else {
+                result.textContent = `${userName}, you have ${yearsLeft} years left in service.`;
+            }
+        }
+    </script>
+</body>
 </html>

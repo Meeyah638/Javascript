@@ -32,31 +32,40 @@
                 <div class="offcanvas-body" style="list-style-type: none;">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" style="font-weight: 600;">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Day One</a>
+                            <a class="nav-link active" href="index.html">Javascript</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="const.html">Day Two</a>
+                            <a class="nav-link" href="AboutMe.html">About Me</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Scoreass.html">Day Three</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="comparison.html">Day Four</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Time.html">Greetings</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="retire.html">Day Six</a>
+                            <a class="nav-link" href="Time.html">Day Event</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="Calculators.html">Calculators</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="Guess.html">Guess: 50-70</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="prime number.html">Prime Numbers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Datatype.html">Data type</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="login.html">Login</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="Hotel.html">Hotel booking</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="UBER.html">Uber</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="PGSchool.html">PG School</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Birthday.html">Birthday</a>
                         </li>
                     </ul>
                 </div>
@@ -64,14 +73,18 @@
         </div>
     </nav>
 
-    <div class="container-fluid row allcalc">
+    <div class="allcalc">
         <!-- Simple Calculator -->
-        <div class="container col-md-3 simplecalc ">
-            <h1>Calculator</h1>
-            <div class="first"> <span class="firin"><input type="text" id="num1"
-                        placeholder="Input first number"></span>
+        <div class="simplecalc">
+            <h1>Simple Calculator</h1>
+            <div class="first">
+
+                <input type="text" id="num1" placeholder="Input first number">
+                <br>
                 <span id="symbol" class="plus"></span>
-                <span class="secin"> <input type="text" id="num2" placeholder="Input second number"></span>
+                <br>
+                <input type="text" id="num2" placeholder="Input second number">
+                <br>
                 <span id="output" class="result"></span><br><br>
             </div>
             <div class="second">
@@ -83,7 +96,7 @@
         </div>
 
         <!-- Investment Calculator -->
-        <div class="container col-md-3  investcalc">
+        <div class="investcalc">
             <h1>Investment Calculator</h1>
             <h3>How much do you want to invest?</h3><br>
             <input type="number" id="amount" placeholder="Enter Amount"><br>
@@ -111,13 +124,14 @@
         </div>
 
         <!-- Loan Calculator -->
-        <div class="container col-md-3 loancalc">
+        <div class="loancalc">
             <h1>Loan Calculator</h1>
             <h3>How much do you want to borrow?</h3><br>
             <input type="number" id="loan" placeholder="Enter Loan Amount"><br>
             <h4 id="interest">Note:Interest of 20% per month</h4>
             <div class="forsell">
-                <form> <select name="duration" id="duration">
+                <form>
+                    <select name="durations" id="durations">
                         <option value="1">1 month</option>
                         <option value="2">2 months</option>
                         <option value="3">3 months</option>
@@ -130,13 +144,24 @@
                         <option value="10">10 months</option>
                         <option value="11">11 months</option>
                         <option value="12">12 months</option>
-                    </select> </form><br><br>
+                    </select>
+                </form><br><br>
             </div>
             <button id="calculateL">Calculate</button>
             <h5 id="solution"></h5>
         </div>
-    </div>
-    <script src="Calculators.js"></script>
+
+        <!-- Retirement Calculator -->
+        <div class="retirecalculator">
+            <h1>Retirement Calculator</h1>
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="number" id="birthYear" placeholder="Year of Birth">
+            <br><br><br><br>
+            <button onclick="calculateRetirement()">Calculate</button>
+            <h5 id="answer"></h5>
+        </div>
+
+        <script src="Calculators.js"></script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRIME NUMBERS</title>
+    <title>ADD&DELETE</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -14,39 +14,71 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
         </script>
     <style>
-        .primenumber {
-            max-width: 700px;
-            margin-top: 30px;
-            background-color: black;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .adddelete {
+            background: rgb(63, 63, 170);
+            width: 900px;
             padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        h1 {
+            display: flex;
+            gap: 40px;
             color: white;
-            font-weight: bold;
-
+            align-items: center;
+            margin-top: 50px;
         }
 
-        input {
-            padding: 15px 20px;
+        .course,
+        .selected {
+            background: rgb(62, 175, 212);
             border: none;
+            padding: 8px 20px;
             font-weight: bold;
-            box-shadow: 0 10px 20px rgba(223, 218, 218, 0.2);
-            width: 400px;
+            margin-bottom: 10px;
+            color: black;
             border-radius: 7px;
         }
 
-        p {
-            font-size: 22px;
-            font-weight: bold;
-            margin-top: 20px;
-            color: blueviolet;
+        .lists {
+            list-style-type: none;
+            background-color: rgb(101, 94, 150);
+            border: none;
+            border-radius: 10px;
+            width: 200px;
+            overflow-y: auto;
+            height: 400px;
+            padding: 0;
         }
-        h3{
-            color: white;
+
+        .lists li {
+            padding: 6px;
+            cursor: pointer;
             font-weight: bold;
+        }
+
+        .lists li:hover {
+            background: lightgray;
+        }
+
+        .lists li.active {
+            background: rgb(62, 175, 212);
+            color: white;
+        }
+
+        .middle button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .last .lists {
+            background-color: rgb(101, 94, 150);
+            color: black;
         }
     </style>
 </head>
@@ -106,58 +138,84 @@
             </div>
         </div>
     </nav>
+    </head>
 
     <body>
-        <div class="primenumber container">
-            <h1>Prime Number Verification</h1> <br>
-            <input type="text" id="prime" placeholder="Enter any number">
-            <br>
-            <p id="message"></p>
-            <h3>Prime numbers between 50 and 100:</h3>
-            <p id="primeList" style="font-size: 25px;"></p>
+        <div class="adddelete container">
+            <div class="first">
+                <button class="course">Available Courses</button>
+                <ul class="lists" id="availableList">
+                    <li>CHE 311</li>
+                    <li>CHE 312</li>
+                    <li>CHE 313</li>
+                    <li>CHE 314</li>
+                    <li>CHE 315</li>
+                    <li>CHE 316</li>
+                    <li>CHE 317</li>
+                    <li>CHE 318</li>
+                    <li>CHE 318</li>
+                    <li>CHE 318</li>
+                    <li>CHE 318</li>
+                    <li>CHE 318</li>
+                    <li>CHE 318</li>
+                    <li>CHE 318</li>
+                    <li>CHE 318</li>
+                    <li>CHE 318</li>
+                    <li>CHE 318</li>
+                    <li>CHE 318</li>
+                    <li>CHE 318</li>
+                    <li>CHE 318</li>
+                    <li>CHE 318</li>
+                    <li>CHE 318</li>
+                    <li>CHE 318</li>
+                </ul>
+            </div>
+            <div class="middle">
+                <button class="add" onclick="addCourse()">Add</button>
+                <button class="remove" onclick="removeCourse()">Remove</button>
+            </div>
+
+            <div class="last">
+                <button class="selected">Selected Courses for Registration</button>
+                <ul class="lists" id="selectedList"></ul>
+            </div>
         </div>
 
         <script>
-            const primeInput = document.getElementById("prime");
-            const message = document.getElementById("message");
-            const primeList = document.getElementById("primeList");
+            let selectedAvailable = null;
+            let selectedRegistered = null;
+            document.querySelectorAll("#availableList, #selectedList").forEach(list => {
+                list.addEventListener("click", function (e) {
+                    if (e.target.tagName === "LI") {
+                        [...list.children].forEach(li => li.classList.remove("active"));
+                        e.target.classList.add("active");
 
-            primeInput.addEventListener("input", function () {
-                let userinput = Number(primeInput.value);
-
-                if (!primeInput.value) {
-                    message.textContent = "";
-                    return;
-                }
-
-                if (userinput < 1 || userinput > 50) {
-                    message.textContent = "Please enter a number between 1 and 50.";
-                    message.style.color = "orange";
-                    return;
-                }
-
-                if (isPrime(userinput)) {
-                    message.textContent = `${userinput} is a prime number.`;
-                    message.style.color = "green";
-                } else {
-                    message.textContent = `${userinput} is not a prime number.`;
-                    message.style.color = "red";
-                }
+                        if (list.id === "availableList") {
+                            selectedAvailable = e.target;
+                            selectedRegistered = null;
+                        } else {
+                            selectedRegistered = e.target;
+                            selectedAvailable = null;
+                        }
+                    }
+                });
             });
 
-            function isPrime(num) {
-                if (num < 2) return false;
-                for (let i = 2; i <= Math.sqrt(num); i++) {
-                    if (num % i === 0) return false;
+            function addCourse() {
+                if (selectedAvailable) {
+                    document.getElementById("selectedList").appendChild(selectedAvailable.cloneNode(true));
+                    selectedAvailable.classList.remove("active");
+                    selectedAvailable = null;
                 }
-                return true;
             }
 
-            let primes = [];
-            for (let n = 50; n <= 100; n++) {
-                if (isPrime(n)) primes.push(n);
+            function removeCourse() {
+                if (selectedRegistered) {
+                    selectedRegistered.remove();
+                    selectedRegistered = null;
+                }
             }
-            primeList.textContent = primes.join(", ");
+
         </script>
     </body>
 

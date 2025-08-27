@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRIME NUMBERS</title>
+    <title>Guess My Number(50-70)</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -13,42 +13,54 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
         </script>
+
     <style>
-        .primenumber {
-            max-width: 700px;
+        .game {
+            max-width: 400px;
             margin-top: 30px;
-            background-color: black;
+            background-color: chartreuse;
             padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
-            color: white;
+            color: blueviolet;
             font-weight: bold;
-
+            font-size: 26px;
         }
 
         input {
-            padding: 15px 20px;
+            padding: 10px 20px;
             border: none;
             font-weight: bold;
-            box-shadow: 0 10px 20px rgba(223, 218, 218, 0.2);
-            width: 400px;
-            border-radius: 7px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            background: blueviolet;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: darkviolet;
         }
 
         p {
-            font-size: 22px;
+            font-size: 18px;
             font-weight: bold;
             margin-top: 20px;
-            color: blueviolet;
-        }
-        h3{
-            color: white;
-            font-weight: bold;
         }
     </style>
+
+
+
 </head>
 
 <body style="font-family: Arial, Helvetica, sans-serif;">
@@ -106,59 +118,93 @@
             </div>
         </div>
     </nav>
+    <div class="game container">
+        <div class="game-container">
+            <h1>Guess My Number (50-70)</h1>
+            <p>Enter a number between <strong>50</strong> and <strong>70</strong></p>
 
-    <body>
-        <div class="primenumber container">
-            <h1>Prime Number Verification</h1> <br>
-            <input type="text" id="prime" placeholder="Enter any number">
+            <input type="text" id="guess" placeholder="Your guess">
             <br>
+            <button id="check">Check</button>
+
             <p id="message"></p>
-            <h3>Prime numbers between 50 and 100:</h3>
-            <p id="primeList" style="font-size: 25px;"></p>
+            <p id="score" style="color: rgb(245, 142, 7);">Highest Score: 25</p>
         </div>
 
         <script>
-            const primeInput = document.getElementById("prime");
+            let secretNumber = Math.floor(Math.random() * 21) + 50;
+            let attemptsLeft = 5;
+            let score = 25;
+
             const message = document.getElementById("message");
-            const primeList = document.getElementById("primeList");
+            const scoreDisplay = document.getElementById("score");
+            const guessInput = document.getElementById("guess");
+            const checkBtn = document.getElementById("check");
 
-            primeInput.addEventListener("input", function () {
-                let userinput = Number(primeInput.value);
-
-                if (!primeInput.value) {
-                    message.textContent = "";
+            checkBtn.addEventListener("click", function () {
+                if (checkBtn.textContent === "Reset") {
+                    resetGame();
                     return;
                 }
 
-                if (userinput < 1 || userinput > 50) {
-                    message.textContent = "Please enter a number between 1 and 50.";
-                    message.style.color = "orange";
+                let guess = Number(guessInput.value);
+
+                if (!guess) {
+                    message.textContent = "Please enter a number!";
                     return;
                 }
 
-                if (isPrime(userinput)) {
-                    message.textContent = `${userinput} is a prime number.`;
-                    message.style.color = "green";
-                } else {
-                    message.textContent = `${userinput} is not a prime number.`;
+                if (guess < 50 || guess > 70) {
+                    message.textContent = "Sorry, values can't be less than 50 or greater than 70!";
                     message.style.color = "red";
+                    return;
                 }
+
+                if (guess === secretNumber) {
+                    message.textContent = `Wow, you won! The number was ${secretNumber} and you have a score of ${score} points`;
+                    message.style.color = 'green';
+                    checkBtn.textContent = "Reset";
+                    guessInput.disabled = true;
+                } else {
+                    attemptsLeft--;
+                    score -= 5;
+
+                    if (attemptsLeft > 0) {
+                        if (guess > secretNumber) {
+                            message.textContent = `The number is less than ${guess}. Now you have ${attemptsLeft} more chances.`;
+                            message.style.color = 'blue';
+                        } else {
+                            message.textContent = `The number is greater than ${guess}. Now you have ${attemptsLeft} more chances.`;
+                            message.style.color = 'blue';
+                        }
+                        scoreDisplay.textContent = `Score: ${score}`;
+                    } else {
+                        message.textContent = `Game Over! The number was ${secretNumber}`;
+                        message.style.color = 'red';
+                        scoreDisplay.textContent = `Score: 0`;
+                        checkBtn.textContent = "Reset";
+                        guessInput.disabled = true;
+                    }
+                }
+
+                guessInput.value = "";
             });
 
-            function isPrime(num) {
-                if (num < 2) return false;
-                for (let i = 2; i <= Math.sqrt(num); i++) {
-                    if (num % i === 0) return false;
-                }
-                return true;
+            function resetGame() {
+                secretNumber = Math.floor(Math.random() * 21) + 50;
+                attemptsLeft = 5;
+                score = 25;
+                message.textContent = "";
+                scoreDisplay.textContent = "Highest Score: 25";
+                guessInput.value = "";
+                guessInput.disabled = false;
+                checkBtn.textContent = "Check";
             }
-
-            let primes = [];
-            for (let n = 50; n <= 100; n++) {
-                if (isPrime(n)) primes.push(n);
-            }
-            primeList.textContent = primes.join(", ");
         </script>
-    </body>
+</body>
+
+</html>
+
+</body>
 
 </html>

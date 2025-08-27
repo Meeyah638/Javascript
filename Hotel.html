@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GREETINGS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
+        </script>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ccc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h4 {
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .Hotelpage1,
+        .Hotelpage2,
+        .Hotelpage3 {
+            max-width: 500px;
+            margin: 40px auto;
+            background-color: #3498db;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        label {
+            font-weight: 600;
+            color: #444;
+        }
+
+        .Hotelpage3 h4 {
+            color: white;
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border: 1px solid #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.6);
+        }
+
+        button {
+            background-color: rgb(211, 104, 211);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #2c3e50;
+        }
+
+        .Hotelpage2 h3 {
+            color: white;
+            font-size: 25px;
+        }
+
+        .Hotelpage2 p {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        #timer {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: red;
+            margin-top: 15px;
+        }
+
+        #thanks {
+            font-weight: bold;
+            font-size: 32px;
+        }
+
+        #nameError,
+        #checkOutError,
+        #suiteError,
+        #checkOutError {
+            font-size: 20px;
+            color: rgb(102, 8, 191);
+            font-weight: bold;
+            margin: -10px 0 10px 0;
+        }
+
+        #guestName {
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+</head>
+
+<body style="font-family: Arial, Helvetica, sans-serif;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" style="background: white;">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="color: blueviolet;font-weight: bold;">JAVASCRIPT</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-tertiary" tabindex="-1" id="offcanvasNavbar">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">JAVASCRIPT</h5>
+                    <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body" style="list-style-type: none;">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" style="font-weight: 600;">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Javascript</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="AboutMe.html">About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Time.html">Day Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Calculators.html">Calculators</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Guess.html">Guess: 50-70</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="prime number.html">Prime Numbers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Datatype.html">Data type</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Hotel.html">Hotel booking</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="UBER.html">Uber</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="PGSchool.html">PG School</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Birthday.html">Birthday</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="Hotelpage1">
+        <h1>Welcome to LIPAN Hotels and Suite</h1> <br>
+        <h4>Book A Hotel</h4><br>
+        <form onsubmit="bookHotel()">
+            <label for="name">Enter your Name</label><br>
+            <input type="text" id="name"><br>
+            <p id="nameError"></p><br>
+
+            <label for="hotelSuite">Enter your Preferred Hotel Suite</label><br>
+            <select id="suite">
+                <option value="">Select Suite</option>
+                <option value="Free Hotel Accommodation:0">Free Hotel Accommodation - ₦0 per night</option>
+                <option value="Silver Hotel Accommodation:20000">Silver Hotel Accommodation - ₦20000 per night</option>
+                <option value="Golden Hotel Accommodation:60000">Golden Hotel Accommodation - ₦60000 per night</option>
+                <option value="Ruby Hotel Accommodation:130000">Ruby Hotel Accommodation - ₦130000 per night</option>
+                <option value="Platinum Hotel Accommodation:200000">Platinum Hotel Accommodation - ₦200000 per night
+                </option>
+                <option value="Diamond Hotel Accommodation:5000000">Diamond Hotel Accommodation - ₦5000000 per night
+                </option>
+            </select><br><br>
+            <p id="suiteError"></p>
+            <label for="leave">When will you be leaving us</label><br><br>
+            <input type="date" id="date"><br><br>
+            <p id="checkOutError"></p>
+            <button type="submit">Book Hotel</button>
+        </form>
+    </div>
+
+    <div class="Hotelpage2" style="display:none;">
+        <h3>Thank you <span id="thanks"></span> for choosing
+            LIPAN <span id="chosenSuite"></span>, you will pay a total of ₦<span id="totalCost"></span>
+        </h3>
+        <p>Check In: You checked in on <span id="checkin"></span></p>
+        <p>Check out: You checked out on <span id="checkout"></span></p>
+        <button onclick="confirmBooking()">Confirm Booking</button>
+        <button onclick="backtoBookHotel()">Edit Booking</button>
+    </div>
+
+    <div class="Hotelpage3" style="display:none;">
+        <h4>Dear <span id="guestName"></span>, you will need to pack and leave your
+            <span id="preferred"></span> in the next:
+        </h4>
+        <p id="timer" style="font-size:30px;color:blue;font-weight: bold;"></p>
+    </div>
+
+    <script>
+        function showPage(page) {
+            document.querySelector(".Hotelpage1").style.display = (page === 1) ? "block" : "none";
+            document.querySelector(".Hotelpage2").style.display = (page === 2) ? "block" : "none";
+            document.querySelector(".Hotelpage3").style.display = (page === 3) ? "block" : "none";
+        }
+
+        function bookHotel() {
+            event.preventDefault();
+
+            let name = document.getElementById('name').value.trim();
+            let suiteValue = document.getElementById('suite').value;
+            let leaveDate = document.getElementById('date').value;
+
+
+            if (!name) {
+                document.getElementById('nameError').textContent = "Name is required!";
+                return;
+            } else {
+                document.getElementById('nameError').textContent = "";
+            }
+
+            if (!suiteValue) {
+                document.getElementById('suiteError').textContent = "Please select a hotel suite.";
+                return;
+            } else {
+                document.getElementById('suiteError').textContent = "";
+            }
+
+
+            if (!leaveDate) {
+                document.getElementById('checkOutError').textContent = "Please choose a check-out date!";
+                return;
+            } else {
+                document.getElementById('checkOutError').textContent = "";
+            }
+
+            let [suiteName, price] = suiteValue.split(":");
+            price = Number(price);
+
+            let checkinDate = new Date();
+            let checkoutDate = new Date(leaveDate);
+            let diffTime = checkoutDate - checkinDate;
+            let nights = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+            if (nights <= 0) {
+                document.getElementById('checkOutError').textContent = "Checkout date must be after today.";
+                return;
+            } else {
+                document.getElementById('checkOutError').textContent = "";
+            }
+            let total = price * nights;
+
+            document.getElementById('thanks').textContent = name;
+            document.getElementById('chosenSuite').textContent = suiteName;
+            document.getElementById('totalCost').textContent = total.toLocaleString();
+            document.getElementById('checkin').textContent = checkinDate.toDateString();
+            document.getElementById('checkout').textContent = checkoutDate.toDateString();
+
+            document.getElementById('guestName').textContent = name;
+            document.getElementById('preferred').textContent = suiteName;
+            showPage(2);
+        }
+
+        function backtoBookHotel() {
+            showPage(1);
+        }
+
+        function confirmBooking() {
+            showPage(3);
+
+            let checkoutDate = new Date(document.getElementById('checkout').textContent);
+            let timerEl = document.getElementById('timer');
+
+            let countdown = setInterval(() => {
+                let now = new Date();
+                let timeLeft = checkoutDate - now;
+
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                    timerEl.textContent = "Time's up! Please check out.";
+                } else {
+                    let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                    let hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+                    let minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+                    let seconds = Math.floor((timeLeft / 1000) % 60);
+
+                    timerEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                }
+            }, 1000);
+        }
+
+    </script>
+
+</body>
+
+</html>

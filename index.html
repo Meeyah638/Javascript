@@ -14,12 +14,162 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
     <style>
-        tr:nth-child(even) {
-            background: rgb(204, 203, 203);
+        * {
+            font-family: Arial, Helvetica, sans-serif;
         }
 
-        tr:nth-child(odd) {
+        .historyJ {
+            text-align: center;
+            font-weight: bold;
+            color: purple;
+        }
+
+        .aboutJ {
+            font-weight: 600;
+        }
+
+        .tHeadJ {
+            font-weight: bold;
+        }
+
+        .tBodyJ td {
+            padding: 10px;
+        }
+
+        .tBodyJ tr:nth-child(even) {
+            background: rgb(204, 203, 203);
+            color: blueviolet;
+            font-weight: bold;
+        }
+
+        .tBodyJ tr:nth-child(odd) {
             background: white;
+            color: black;
+            font-weight: bold;
+        }
+
+        .varint h2 {
+            color: #e45252;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .varint p {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .vardef h2 {
+            font-size: 25px;
+            font-weight: bold;
+            color: #e94444;
+        }
+
+        .vardef p {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .vardef h4 {
+            font-size: 15px;
+        }
+
+        .letdef h2 {
+            font-size: 25px;
+            font-weight: bold;
+            color: #e94444;
+        }
+
+        .letdef p {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .letdef h4 {
+            font-size: 15px;
+        }
+
+        .constdef h2 {
+            font-size: 25px;
+            font-weight: bold;
+            color: #e94444;
+        }
+
+        .constdef p {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .constdef h4 {
+            font-size: 15px;
+        }
+
+        .Tablevarletconst h1 {
+            color: #e94444;
+            font-weight: bold;
+        }
+
+        .Tablevarletconst table {
+            width: 70%;
+            border: 1px solid black;
+        }
+
+        .Tablevarletconst thead {
+            font-weight: bold;
+            font-size: 20px;
+            background-color: #d86767;
+        }
+
+        .Tablevarletconst td {
+            border: 2px solid black;
+        }
+
+        .firstrow {
+            border: 2px solid black;
+            background: #d86767;
+            font-weight: bold;
+        }
+
+        .secondline {
+            border: 2px solid black;
+            background-color: #e49c9c;
+            font-weight: 600;
+        }
+
+        .comparisonO h2 {
+            font-weight: bold;
+            color: #e45252;
+            margin-top: 10px;
+        }
+
+        .comparisonO h3 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .comparisonO p {
+            color: #e45252;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .comparisonO h4 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .schoist h2 {
+            font-weight: bold;
+            color: #e94444;
+        }
+
+        .schoist h4 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .schoist p {
+            font-size: 14px;
         }
     </style>
 </head>
@@ -28,8 +178,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" style="background: white;">
         <div class="container">
             <a class="navbar-brand" href="#" style="color: blueviolet;font-weight: bold;">JAVASCRIPT</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="offcanvas offcanvas-end text-bg-tertiary" tabindex="-1" id="offcanvasNavbar">
@@ -40,31 +189,40 @@
                 <div class="offcanvas-body" style="list-style-type: none;">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" style="font-weight: 600;">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Day One</a>
+                            <a class="nav-link active" href="index.html">Javascript</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="const.html">Day Two</a>
+                            <a class="nav-link" href="AboutMe.html">About Me</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Scoreass.html">Day Three</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="comparison.html">Day Four</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Time.html">Greetings</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="retire.html">Retirement Age</a>
+                            <a class="nav-link" href="Time.html">Day Event</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="Calculators.html">Calculators</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="Guess.html">Guess: 50-70</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="prime number.html">Prime Numbers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Datatype.html">Data type</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="login.html">Login</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="Hotel.html">Hotel booking</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="UBER.html">Uber</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="PGSchool.html">PG School</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Birthday.html">Birthday</a>
                         </li>
                     </ul>
                 </div>
@@ -72,176 +230,404 @@
         </div>
     </nav>
     <div>
-        <h1 style="text-align: center;font-weight: 600;">HISTORY OF JAVASCRIPT</h1>
+        <div class="historyJ">
+            <h1>HISTORY OF JAVASCRIPT</h1>
+        </div>
+        <div class="container aboutJ">
+            <p>Brendan Eich developed JavaScript, a computer language, in just ten days in May
+                1995. <br>
+                Initially called Mocha, then LiveScript, it finally became known as JavaScript. <br>
+                It was designed for the client-side of websites to add dynamic and interactive elements <br>
+                to static HTML pages.</p>
+            <p>JavaScript was invented by Brendan Eich in 1995. <br>
+                It was developed for Netscape 2, and became the ECMA-262 standard in 1997. <br>
+                After Netscape handed JavaScript over to ECMA, the Mozilla foundation continued <br>
+                to develop JavaScript for the Firefox browser. Mozilla's latest version was 1.8.5. <br>
+                (Identical to ES5). Internet Explorer (IE4) was the first browser to support ECMA-262 <br>
+                Edition 1 (ES1).</p>
+        </div>
+        <table class="container">
+            <thead class="tHeadJ">
+                <tr>
+                    <td>Year</td>
+                    <td>ECMA</td>
+                    <td>Browser</td>
+                </tr>
+            </thead>
+            <tbody class="tBodyJ">
+                <tr>
+                    <td>1995</td>
+                    <td></td>
+                    <td>JavaScript was invented by Brendan Eich</td>
+                </tr>
+                <tr>
+                    <td>1996</td>
+                    <td></td>
+                    <td>Netscape 2 was released with JavaScript 1.0</td>
+                </tr>
+                <tr>
+                    <td>1997</td>
+                    <td></td>
+                    <td>JavaScript became an ECMA standard (ECMA-262)</td>
+                </tr>
+                <tr>
+                    <td>1997</td>
+                    <td>ES1</td>
+                    <td>ECMAScript 1 was released</td>
+                </tr>
+                <tr>
+                    <td>1997</td>
+                    <td>ES1</td>
+                    <td>IE 4 was the first browser to support ES1</td>
+                </tr>
+                <tr>
+                    <td>1998</td>
+                    <td>ES2</td>
+                    <td>ECMAScript 2 was released</td>
+                </tr>
+                <tr>
+                    <td>1998</td>
+                    <td></td>
+                    <td>Netscape 42 was released with JavaScript 1.3</td>
+                </tr>
+                <tr>
+                    <td>1999</td>
+                    <td>ES2</td>
+                    <td>IE 5 was the first browser to support ES2</td>
+                </tr>
+                <tr>
+                    <td>1999</td>
+                    <td>ES3</td>
+                    <td>ECMAScript 3 was released</td>
+                </tr>
+                <tr>
+                    <td>2000</td>
+                    <td>ES3</td>
+                    <td>IE 5.5 was the first browser to support ES3</td>
+                </tr>
+                <tr>
+                    <td>2000</td>
+                    <td></td>
+                    <td>Netscape 62 was released with JavaScript 1.5</td>
+                </tr>
+                <tr>
+                    <td>2000</td>
+                    <td></td>
+                    <td>Firefox 1 was released with JavaScript 1.5</td>
+                </tr>
+                <tr>
+                    <td>2008</td>
+                    <td>ES4</td>
+                    <td>ECMAScript 4 was abandoned</td>
+                </tr>
+                <tr>
+                    <td>2009</td>
+                    <td>ES5</td>
+                    <td>ECMAScript 5 was released</td>
+                </tr>
+                <tr>
+                    <td>2011</td>
+                    <td>ES5</td>
+                    <td>IE 9 was the first browser to support ES5 *</td>
+                </tr>
+                <tr>
+                    <td>2011</td>
+                    <td>ES5</td>
+                    <td>Firefox 4 was released with JavaScript 1.8.5</td>
+                </tr>
+                <tr>
+                    <td>2012 </td>
+                    <td>ES5</td>
+                    <td>Full support for ES5 in Safari 6</td>
+                </tr>
+                <tr>
+                    <td>2012</td>
+                    <td>ES5</td>
+                    <td>Full support for ES5 in IE 10</td>
+                </tr>
+                <tr>
+                    <td>2012</td>
+                    <td>ES5</td>
+                    <td>Full support for ES5 in Chrome 23</td>
+                </tr>
+                <tr>
+                    <td>2013</td>
+                    <td>ES5</td>
+                    <td>Full support for ES5 in Firefox 21</td>
+                </tr>
+                <tr>
+                    <td>2013</td>
+                    <td>ES5</td>
+                    <td>Full support for ES5 in Opera 15</td>
+                </tr>
+                <tr>
+                    <td>2014</td>
+                    <td>ES5</td>
+                    <td>Full support for ES5 in all browsers</td>
+                </tr>
+                <tr>
+                    <td>2015</td>
+                    <td>ES6</td>
+                    <td>ECMAScript 6 was released</td>
+                </tr>
+                <tr>
+                    <td>2016</td>
+                    <td>ES6</td>
+                    <td>Full support for ES6 in Chrome 51</td>
+                </tr>
+                <tr>
+                    <td>2016</td>
+                    <td>ES6</td>
+                    <td>Full support for ES6 in Opera 38</td>
+                </tr>
+                <tr>
+                    <td>2016</td>
+                    <td>ES6</td>
+                    <td>Full support for ES6 in Safari 10</td>
+                </tr>
+                <tr>
+                    <td>2017</td>
+                    <td>ES6</td>
+                    <td>Full support for ES6 in Firefox 54</td>
+                </tr>
+                <tr>
+                    <td>2017</td>
+                    <td>ES6</td>
+                    <td>Full support for ES6 in Edge 15</td>
+                </tr>
+                <tr>
+                    <td>2018</td>
+                    <td>ES6</td>
+                    <td>Full support for ES6 in all browsers **</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <div class="container">
-        <p style="font-weight: 600;">Brendan Eich developed JavaScript, a computer language, in just ten days in May 1995. <br>
-            Initially called Mocha, then LiveScript, it finally became known as JavaScript. <br>
-            It was designed for the client-side of websites to add dynamic and interactive elements <br>
-            to static HTML pages.</p>
-        <p style="font-weight: 600;">JavaScript was invented by Brendan Eich in 1995. <br>
-            It was developed for Netscape 2, and became the ECMA-262 standard in 1997. <br>
-            After Netscape handed JavaScript over to ECMA, the Mozilla foundation continued <br>
-            to develop JavaScript for the Firefox browser. Mozilla's latest version was 1.8.5. <br>
-            (Identical to ES5). Internet Explorer (IE4) was the first browser to support ECMA-262 <br>
-            Edition 1 (ES1).</p>
+    <div class="container Varletcon">
+        <div class="varint">
+            <h2>INTRODUCTION TO VAR, LET AND CONST</h2>
+            <p>Variable declaration in JavaScript is the process of creating a variable and <br>
+                giving it a name so that it can be used to store a value. A variable is a named <br>
+                container that holds a value, and can be used to store and manipulate data in a <br>
+                program. "var", "let", and "const" are all used in JavaScript to declare variables. <br>
+                However, there are many differences between let, var, and const in javascript in <br>
+                terms of how they behave and how they should be used.<br></p>
+        </div>
+        <div class="vardef">
+            <h2>What is var? <br></h2>
+            <p> "var" is the oldest way to declare a variable in JavaScript. Variables declared <br>
+                with "var" have a function-level scope, meaning they are only accessible within <br>
+                the function in which they were declared. They also have "hoisting" behavior, <br>
+                which means they are accessible throughout the entire scope of the function, <br>
+                regardless of where they were declared. However, because of its function-level scope, <br>
+                variables declared with var can lead to unexpected behavior and are generally not recommended.</p><br>
+
+            <h4> Example: <br>
+                var x = 5; <br>
+                console.log(x); // Output: 5 <br>
+                if (x > 0) { <br>
+                var x = 10; <br>
+                console.log(x); // Output: 10 <br>
+                } <br>
+                console.log(x); // Output: 10 <br><br>
+            </h4>
+        </div>
+        <div class="letdef">
+            <h2>What is let?<br></h2>
+            <p>
+                "let" was introduced in ECMAScript 6 (also known as ES6) as an alternative to "var". <br>
+                Variables declared with"let" have the block-level scope, meaning they are only accessible <br>
+                within the block in which they were declared. They also have the concept of the temporal <br>
+                dead zone, which means they are not accessible before they are declared. <br>
+            </p>
+            <h4>Example: <br>
+                let y = 5;
+                console.log(y); // Output: 5 <br>
+                if (y > 0) { <br>
+                let y = 10; <br>
+                console.log(y); // Output: 10 <br>
+                } <br>
+                console.log(y); // Output: 5 <br><br>
+            </h4>
+        </div>
+        <div class="constdef">
+            <h2> What is const? <br></h2>
+            <p> "const" was also introduced in ECMAScript 6 and is used to declare variables <br>
+                that cannot be reassigned. This makes "const" variables useful for declaring <br>
+                constants, such as pi or the gravitational constant, which have a fixed value. <br>
+                Like "let", "const" variables have the block-level scope, and, they are not <br>
+                accessible before they are declared. However, it is recommended to use "let" <br>
+                and "const" over "var" when declaring variables in JavaScript because they <br>
+                have more predictable behavior, and "const" is the most recommended for <br>
+                defining constant values that you don't expect to change.
+            </p><br>
+            <h4>Example:
+                const pi = 3.14; <br>
+                console.log(pi); // Output: 3.14 <br>
+                pi = 3.14159; // TypeError: Assignment to constant variable.
+            </h4>
+        </div>
     </div>
-    <table class="container">
-        <thead>
-            <tr style="font-weight: bold;">
-                <td>Year</td>
-                <td>ECMA</td>
-                <td>Browser</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1995</td>
-                <td></td>
-                <td>JavaScript was invented by Brendan Eich</td>
-            </tr>
-            <tr>
-                <td>1996</td>
-                <td></td>
-                <td>Netscape 2 was released with JavaScript 1.0</td>
-            </tr>
-            <tr>
-                <td>1997</td>
-                <td></td>
-                <td>JavaScript became an ECMA standard (ECMA-262)</td>
-            </tr>
-            <tr>
-                <td>1997</td>
-                <td>ES1</td>
-                <td>ECMAScript 1 was released</td>
-            </tr>
-            <tr>
-                <td>1997</td>
-                <td>ES1</td>
-                <td>IE 4 was the first browser to support ES1</td>
-            </tr>
-            <tr>
-                <td>1998</td>
-                <td>ES2</td>
-                <td>ECMAScript 2 was released</td>
-            </tr>
-            <tr>
-                <td>1998</td>
-                <td></td>
-                <td>Netscape 42 was released with JavaScript 1.3</td>
-            </tr>
-            <tr>
-                <td>1999</td>
-                <td>ES2</td>
-                <td>IE 5 was the first browser to support ES2</td>
-            </tr>
-            <tr>
-                <td>1999</td>
-                <td>ES3</td>
-                <td>ECMAScript 3 was released</td>
-            </tr>
-            <tr>
-                <td>2000</td>
-                <td>ES3</td>
-                <td>IE 5.5 was the first browser to support ES3</td>
-            </tr>
-            <tr>
-                <td>2000</td>
-                <td></td>
-                <td>Netscape 62 was released with JavaScript 1.5</td>
-            </tr>
-            <tr>
-                <td>2000</td>
-                <td></td>
-                <td>Firefox 1 was released with JavaScript 1.5</td>
-            </tr>
-            <tr>
-                <td>2008</td>
-                <td>ES4</td>
-                <td>ECMAScript 4 was abandoned</td>
-            </tr>
-            <tr>
-                <td>2009</td>
-                <td>ES5</td>
-                <td>ECMAScript 5 was released</td>
-            </tr>
-            <tr>
-                <td>2011</td>
-                <td>ES5</td>
-                <td>IE 9 was the first browser to support ES5 *</td>
-            </tr>
-            <tr>
-                <td>2011</td>
-                <td>ES5</td>
-                <td>Firefox 4 was released with JavaScript 1.8.5</td>
-            </tr>
-            <tr>
-                <td>2012 </td>
-                <td>ES5</td>
-                <td>Full support for ES5 in Safari 6</td>
-            </tr>
-            <tr>
-                <td>2012</td>
-                <td>ES5</td>
-                <td>Full support for ES5 in IE 10</td>
-            </tr>
-            <tr>
-                <td>2012</td>
-                <td>ES5</td>
-                <td>Full support for ES5 in Chrome 23</td>
-            </tr>
-            <tr>
-                <td>2013</td>
-                <td>ES5</td>
-                <td>Full support for ES5 in Firefox 21</td>
-            </tr>
-            <tr>
-                <td>2013</td>
-                <td>ES5</td>
-                <td>Full support for ES5 in Opera 15</td>
-            </tr>
-            <tr>
-                <td>2014</td>
-                <td>ES5</td>
-                <td>Full support for ES5 in all browsers</td>
-            </tr>
-            <tr>
-                <td>2015</td>
-                <td>ES6</td>
-                <td>ECMAScript 6 was released</td>
-            </tr>
-            <tr>
-                <td>2016</td>
-                <td>ES6</td>
-                <td>Full support for ES6 in Chrome 51</td>
-            </tr>
-            <tr>
-                <td>2016</td>
-                <td>ES6</td>
-                <td>Full support for ES6 in Opera 38</td>
-            </tr>
-            <tr>
-                <td>2016</td>
-                <td>ES6</td>
-                <td>Full support for ES6 in Safari 10</td>
-            </tr>
-            <tr>
-                <td>2017</td>
-                <td>ES6</td>
-                <td>Full support for ES6 in Firefox 54</td>
-            </tr>
-            <tr>
-                <td>2017</td>
-                <td>ES6</td>
-                <td>Full support for ES6 in Edge 15</td>
-            </tr>
-            <tr>
-                <td>2018</td>
-                <td>ES6</td>
-                <td>Full support for ES6 in all browsers **</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container Tablevarletconst"><br><br>
+        <h1>Differences between var,let and const</h1> <br>
+        <table>
+            <thead>
+                <tr>
+                    <td>Feature</td>
+                    <td>var</td>
+                    <td>let</td>
+                    <td>const</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="firstrow">Scope</td>
+                    <td class="secondline">Var has function-level <br>scope,
+                        which makes <br>the variables <br>
+                        declared with var <br>accessible <br>
+                        throughout the <br>function they are
+                        <br>declared in.
+                    </td>
+                    <td class="secondline">Let has block-level scope, which makes <br>
+                        the variables declared with let inaccessible <br>
+                        to the entire function they are declared in.</td>
+                    <td class="secondline">Similar to let, const <br>has a block-level
+                        <br>scope as well.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="firstrow">Reassignable</td>
+                    <td class="secondline">Variables declared <br>with var can be
+                        <br>reassigned.
+                    </td>
+                    <td class="secondline">Variables declared <br>with let can be
+                        <br>reassigned.
+                    </td>
+                    <td class="secondline">Variables declared <br>with const cannot be
+                        <br>reassigned.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="firstrow">Hoisting</td>
+                    <td class="secondline">Variables declared <br>with var are
+                        hoisted, <br>which means
+                        they <br>can be accessed <br>before they are <br>declared.</td>
+                    <td class="secondline">Variables declared <br>with let are not
+                        <br>hoisted.
+                    </td>
+                    <td class="secondline">Variables declared <br>with const are not
+                        <br>hoisted.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="firstrow">Temporal Dead Zone</td>
+                    <td class="secondline">Variables declared <br>with var don't have
+                        a <br>temporal
+                        dead zone, <br>making them <br>accessible before <br>declaration.</td>
+                    <td class="secondline">Variables declared <br>with var have a
+                        <br>temporal dead zone, <br>
+                        making them <br>inaccessible before declaration.
+                    </td>
+                    <td class="secondline">Similar to let, const <br>has a temporal
+                        dead <br>zone as well.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container comparisonO">
+        <h2>Comparison operators</h2>
+        <h3>Comparison operators are used in logical statements to determine <br>
+            equality or difference between variables or values.<br>
+            Comparison operators can be used in conditional statements to <br>
+            compare values and take action depending on the result.</h3>
+        <h2>Logical Operators</h2>
+        <h3> Logical operators are used to determine the logic between variables or values. <br>
+            <br>
+        </h3>
+        <p>
+            Example:
+            var isTrue = ('yellow' === 'green') && (4 >= 4); <br><br>
+        </p>
+
+        <h4> In the example above, we check if the string 'yellow' is equal to the string 'green' and (&&) if 4 is
+            greater
+            than <br>
+            or equal to 4. Let’s break this down into the two comparison expressions. <br>
+
+            The first expression is false, because the string 'yellow' is not the same (equal) as the string 'green'.
+            <br>
+            The second expression is true, because the number 4 is greater than or equal to 4. <br>
+            The && operator requires that both expressions be true in order for the expression to be truthy. <br>
+        </h4>
+    </div>
+    <div class="container schoist">
+        <h2>
+            Scope <br>
+        </h2>
+
+        <h4> Scope means where a variable can be accessed. Global scope → variable can be used anywhere. <br>
+
+            Function scope → variable only works inside the function.Block scope (let and const) → <br>variable only
+            works
+            inside { }.
+        </h4>
+
+        <p> Example: <br>
+            Global variable: let globalVar = "I am global" <br>
+            Inside a function: <br>
+            function myFunc() { <br>
+            let funcVar = "I am inside function"; <br>
+            if (true) { <br>
+            let blockVar = "I am inside block"; <br>
+            console.log(blockVar); // Works <br>
+            } <br>
+            console.log(funcVar); // Works <br>
+            }
+        </p>
+
+        <h2> Hoisting</h2>
+
+        <h4> JavaScript moves declarations to the top of their scope before running.
+
+            With var, variables are hoisted but not their values.
+
+            With let and const, variables are not accessible before declaration (Temporal Dead Zone).
+
+            Functions declared with function are fully hoisted.</h4>
+
+        <p> Example 1 (var):
+            sayHi();
+
+            function sayHi() {
+            console.log("Hello!");
+            }
+
+        </p>
+        <h2> Closure</h2>
+
+        <h4> A closure happens when an inner function “remembers” variables from its outer function, even after the
+            outer
+            function has finished.
+        </h4>
+        <p> Example:
+            function outer() {
+            let count = 0;
+
+            function inner() {
+            count++;
+            console.log(count);
+            }
+
+            return inner;
+            }
+
+            const counter = outer();
+            counter(); // 1
+            counter(); // 2
+            counter(); // 3
+        </p>
+    </div>
 </body>
 
-</html> 
+</html>

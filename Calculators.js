@@ -88,22 +88,20 @@ calculateButton.addEventListener('click', function () {
             ${investedAmount} in our business for ${Duration} months`
     }
 })
- 
+
 
 // Loan Calculator
 let calculateLoan = document.getElementById('calculateL');
 calculateLoan.addEventListener('click', function () {
     let loanAmount = Number(document.getElementById('loan').value);
-    let Duration = Number(document.getElementById('duration').value);
+    let Duration = Number(document.getElementById('durations').value);
     let interestPerMonths = 20;
-   let totalAmountToPay = Number(loanAmount + ((interestPerMonths / 100) * loanAmount * Duration));
-    let monthlyRepayment = totalAmountToPay / Duration;
-    if (loanAmount = ''|| isNaN(loanAmount)) {
+    let totalAmountToPay = Number(loanAmount + ((interestPerMonths / 100) * loanAmount * Duration));
+    let monthlyRepayment = (totalAmountToPay / Duration).toFixed(2);
+    if (isNaN(loanAmount) || (loanAmount == '')) {
         document.getElementById('solution').textContent = "Please enter valid values";
-        return;
-    } 
-    
-    if (Duration === 1) {
+    }
+    else if (Duration == 1) {
         document.getElementById('solution').textContent = `Your repayment is ₦${monthlyRepayment} per month if 
         you borrow ₦${loanAmount} for ${Duration} month`
     } else {
@@ -112,7 +110,25 @@ calculateLoan.addEventListener('click', function () {
     }
 });
 
+// Retirement Calculator
+function calculateRetirement() {
+    let userName = document.getElementById('name').value;
+    let yearOfBirth = document.getElementById('birthYear').value;
+    let retirementAge = 65;
+    let currentYear = new Date().getFullYear();
+    let userAge = currentYear - Number(yearOfBirth);
+    let yearsLeft = retirementAge - userAge;
+
+    let result = document.getElementById('answer');
+
+    if (yearsLeft <= 0) {
+        result.textContent = `${userName}, you are old enough to retire.`;
+    } else if (yearsLeft === 1) {
+        result.textContent = `${userName}, you have ${yearsLeft} year left in service.`;
+    } else {
+        result.textContent = `${userName}, you have ${yearsLeft} years left in service.`;
+    }
+}
 
 
-    
-    
+
